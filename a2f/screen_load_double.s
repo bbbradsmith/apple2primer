@@ -56,6 +56,7 @@
 	dec screen_load_count_
 	bne @loop
 	rts
+	; TODO return disk_read result
 .endproc
 
 _screen_load_double = screen_load_double

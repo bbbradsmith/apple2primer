@@ -28,6 +28,7 @@ screen_load_count_: .res 1
 	ldx a2f_temp+5
 	ldy #1
 	jsr disk_read
+	; TODO OR disk_read result
 	inc a2f_temp+4 ; next sector
 	bne :+
 		inc a2f_temp+5
@@ -78,6 +79,7 @@ screen_load_count_: .res 1
 	dec screen_load_count_
 	bne @loop
 	rts
+	; TODO return cumulative disk_read result
 .endproc
 
 _screen_load = screen_load
